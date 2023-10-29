@@ -1,0 +1,20 @@
+<table class="shots-list">
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>Hit</th>
+      <th>Response Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shot of shots">
+      <td> {{shot.xvalue}} </td>
+      <td> {{shot.yvalue}} </td>
+      <td> {{shot.rvalue}} </td>
+      <td [ngClass]="shot.hit ? 'hit-text' : 'miss-text'"> {{shot.hit ? 'hit' : 'miss'}} </td>
+      <td> {{shot.responseTime}} </td>
+    </tr>
+  </tbody>
+</table>
