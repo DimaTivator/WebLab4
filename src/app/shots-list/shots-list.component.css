@@ -1,13 +1,12 @@
-/* Table styling */
 .shots-list {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #ccc;
   font-family: Arial, sans-serif;
   text-align: center;
+  font-size: 12px;
 }
 
-/* Table header */
 .shots-list thead {
   background-color: #f2f2f2;
 }
@@ -17,12 +16,10 @@
   padding: 10px;
 }
 
-/* Table body */
 .shots-list tbody {
   background-color: #fff;
 }
 
-/* Alternating row colors */
 .shots-list tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
@@ -31,7 +28,6 @@
   background-color: #ffffff;
 }
 
-/* Table cell (td) styling */
 .shots-list td {
   padding: 10px;
   border: 1px solid #ccc;
