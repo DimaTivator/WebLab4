@@ -1,1 +1,49 @@
-<p>form works!</p>
+<div class="alert-container">
+  <app-custom-alert #alert></app-custom-alert>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+    <div class="y-input-container">
+      <label class="label" for="y_input">Enter Y:</label><br>
+      <input type="number" id="y_input" name="y" min="-3" max="5" step="any" required
+             [(ngModel)]="y"><br><br>
+    </div>
+
+    <div class="x-input-container">
+      <label class="label" for="x_input">Choose X:</label><br>
+      <button type="button" class="x-button" (click)="setX(-2)"   [class.active]="x === -2">-2    </button>
+      <button type="button" class="x-button" (click)="setX(-1.5)" [class.active]="x === -1.5">-1.5</button>
+      <button type="button" class="x-button" (click)="setX(-1)"   [class.active]="x === -1">-1    </button>
+      <button type="button" class="x-button" (click)="setX(-0.5)" [class.active]="x === -0.5">-0.5</button>
+      <button type="button" class="x-button" (click)="setX(0)"    [class.active]="x === 0">0      </button>
+      <button type="button" class="x-button" (click)="setX(0.5)"  [class.active]="x === 0.5">0.5  </button>
+      <button type="button" class="x-button" (click)="setX(1)"    [class.active]="x === 1">1      </button>
+      <button type="button" class="x-button" (click)="setX(1.5)"  [class.active]="x === 1.5">1.5  </button>
+      <button type="button" class="x-button" (click)="setX(2)"    [class.active]="x === 2">2      </button>
+      <br><br>
+    </div>
+
+    <div class="r-input-container">
+      <label class="label" for="r_input">Choose R:</label><br>
+      <button type="button" class="r-button" (click)="setR(-2)"   [class.invalid]="r === -2">-2    </button>
+      <button type="button" class="r-button" (click)="setR(-1.5)" [class.invalid]="r === -1.5">-1.5</button>
+      <button type="button" class="r-button" (click)="setR(-1)"   [class.invalid]="r === -1">-1    </button>
+      <button type="button" class="r-button" (click)="setR(-0.5)" [class.invalid]="r === -0.5">-0.5</button>
+      <button type="button" class="r-button" (click)="setR(0)"    [class.invalid]="r === 0">0       </button>
+      <button type="button" class="r-button" (click)="setR(0.5)"  [class.active]="r === 0.5">0.5   </button>
+      <button type="button" class="r-button" (click)="setR(1)"    [class.active]="r === 1">1       </button>
+      <button type="button" class="r-button" (click)="setR(1.5)"  [class.active]="r === 1.5">1.5   </button>
+      <button type="button" class="r-button" (click)="setR(2)"    [class.active]="r === 2">2       </button>
+      <br><br>
+    </div>
+
+    <div class="hidden-inputs">
+      <input type="hidden" id="x_input" name="x" value="">
+      <input type="hidden" id="r_input" name="r" value="">
+    </div>
+
+    <div class="submit-button-container">
+      <input type="submit" value="Submit">
+      <button class="clear-button" type="button" (click)="clearTable()">Clear</button>
+    </div>
+</form>

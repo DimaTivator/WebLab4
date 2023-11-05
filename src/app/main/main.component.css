@@ -34,3 +34,12 @@
     background-color: #999;
     color: #fff;
 }
+
+/* Positioning the form to the left corner */
+.form-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+}
+

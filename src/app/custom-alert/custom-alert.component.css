@@ -1,0 +1,9 @@
+.custom-alert {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 5px;
+  background-color: red;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+}

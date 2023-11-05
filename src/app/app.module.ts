@@ -10,6 +10,8 @@ import { TimePageComponent } from './time-page/time-page.component';
 import { FormComponent } from './form/form.component';
 import { MainComponent } from './main/main.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import {FormsModule} from "@angular/forms";
+import { CustomAlertComponent } from './custom-alert/custom-alert.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { CanvasComponent } from './canvas/canvas.component';
     FormComponent,
     MainComponent,
     CanvasComponent,
+    CustomAlertComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

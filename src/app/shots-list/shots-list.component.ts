@@ -7,7 +7,7 @@ import {ShotsService} from "../service/shots.service";
   templateUrl: './shots-list.component.html',
   styleUrls: ['./shots-list.component.css']
 })
-export class ShotsListComponent implements OnInit{
+export class ShotsListComponent implements OnInit {
 
   shots: Shot[];
 
@@ -15,6 +15,7 @@ export class ShotsListComponent implements OnInit{
 
   ngOnInit(): void {
     this.getShots();
+    setInterval(() => this.getShots(), 500);
   }
 
   private getShots() {
