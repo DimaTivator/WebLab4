@@ -1,0 +1,21 @@
+<div class="form-alert-container">
+  <div class="form-container">
+    <form>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" autocomplete="off" [(ngModel)]="user.username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password">
+      </div>
+      <div class="buttons-container">
+        <button type="submit" (click)="authorizeUser()">Authorize</button>
+        <button type="submit" (click)="registerUser()">Register</button>
+      </div>
+    </form>
+  </div>
+  <div class="alert-container">
+    <app-custom-alert #alert></app-custom-alert>
+  </div>
+</div>

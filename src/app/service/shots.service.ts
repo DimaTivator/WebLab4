@@ -15,20 +15,18 @@ export class ShotsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getShotsList(): Observable<Shot[]> {
+  private getHeaders(): HttpHeaders {
+    const username = localStorage.getItem("username") ?? "default";
+    return new HttpHeaders().set("username", username);
+  }
 
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Access-Control-Allow-Origin': '*'
-    //   })
-    // };
-    // return this.httpClient.get<Shot[]>(this.baseURL, httpOptions);
-    return this.httpClient.get<Shot[]>(this.baseURL);
+  getShotsList(): Observable<Shot[]> {
+    return this.httpClient.get<Shot[]>(this.baseURL, { headers: this.getHeaders() });
   }
 
   // @ts-ignore
-  createShot(shot: Shot, customAlert: CustomAlertComponent): Observable<any> {
-    return this.httpClient.post(this.baseURL, shot)
+  createShot(shot: Shot): Observable<any> {
+    return this.httpClient.post(this.baseURL, shot, { headers: this.getHeaders() })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           if (error.status === 400) {
@@ -41,7 +39,7 @@ export class ShotsService {
   }
 
   deleteAllShots(): Observable<any> {
-    return this.httpClient.delete(this.baseURL)
+    return this.httpClient.delete(this.baseURL, { headers: this.getHeaders() })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return throwError(error);

@@ -40,7 +40,7 @@ export class FormComponent implements OnInit {
   }
 
   saveShot(): void {
-    this.shotsService.createShot(this.shot, this.customAlert).subscribe(data => {
+    this.shotsService.createShot(this.shot).subscribe(data => {
       console.log(data);
     },
     error => {
@@ -49,10 +49,12 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.setY(this.y);
     this.saveShot();
   }
 
   clearTable(): void {
+    this.rValueService.updateClearValue(true);
     this.shotsService.deleteAllShots().subscribe(data => {
         console.log(data);
       },
@@ -80,6 +82,7 @@ export class FormComponent implements OnInit {
   }
 
   processDataFromCanvas(x: number, y: number): void {
+    console.log("process data from canvas");
     // round x
     let newX = 0;
     for (let i = 0; i < this.xValues.length; i++) {

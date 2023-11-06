@@ -11,8 +11,8 @@ export class CanvasComponent implements AfterViewInit {
   @ViewChild('graph') canvas: ElementRef<HTMLCanvasElement>;
   private context: CanvasRenderingContext2D;
 
-  private height = 400;
-  private width = 400;
+  private height = 380;
+  private width = 380;
   private R = 40;
 
   private chartColor = "#ADD8E6"
@@ -27,6 +27,7 @@ export class CanvasComponent implements AfterViewInit {
     // @ts-ignore
     this.context = this.canvas.nativeElement.getContext('2d');
 
+
     this.draw();
 
     this.initializePointsMap();
@@ -38,8 +39,23 @@ export class CanvasComponent implements AfterViewInit {
       this.drawPointsByR();
     });
 
+    this.rValueService.clear$.subscribe(() => {
+      this.removePoints();
+      this.clear();
+      this.draw();
+      this.drawPointsByR();
+    });
+
     this.canvas.nativeElement.addEventListener('click', (event: MouseEvent) => {
       this.handleCanvasClick(event);
+    });
+  }
+
+
+  removePoints(): void {
+    console.log("remove points");
+    this.pointsMap.forEach((array, key) => {
+      this.pointsMap.set(key, []);
     });
   }
 

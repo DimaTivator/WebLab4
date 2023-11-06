@@ -12,7 +12,6 @@ export class CustomAlertComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
   displayAlert(duration: number) {

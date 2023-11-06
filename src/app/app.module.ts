@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import {FormsModule} from "@angular/forms";
 import { CustomAlertComponent } from './custom-alert/custom-alert.component';
+import { AuthorizationFormComponent } from './authorization-form/authorization-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CustomAlertComponent } from './custom-alert/custom-alert.component';
     MainComponent,
     CanvasComponent,
     CustomAlertComponent,
+    AuthorizationFormComponent
   ],
   imports: [
     BrowserModule,
