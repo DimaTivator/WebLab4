@@ -11,28 +11,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="Shots")
-public class Shot {
+@Table(name="users")
+public class User {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="x_value")
-    private double xValue;
-
-    @Column(name="y_value")
-    private double yValue;
-
-    @Column(name="r_value")
-    private double rValue;
-
-    @Column(name="is_hit")
-    private boolean isHit;
-
-    @Column(name="response_time")
-    private double responseTime;
-
     @Column(name="username")
     private String username;
+
+    @Column(name="password")
+    private String password;
 }
